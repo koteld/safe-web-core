@@ -51,6 +51,8 @@ export const TENDERLY_SIMULATE_ENDPOINT_URL = process.env.NEXT_PUBLIC_TENDERLY_S
 export const TENDERLY_PROJECT_NAME = process.env.NEXT_PUBLIC_TENDERLY_PROJECT_NAME || ''
 export const TENDERLY_ORG_NAME = process.env.NEXT_PUBLIC_TENDERLY_ORG_NAME || ''
 
+export const MAGIC_API_KEY = process.env.NEXT_PUBLIC_MAGIC_API_KEY || ''
+
 // Safe Apps tags
 export enum SafeAppsTag {
   NFT = 'nft',
