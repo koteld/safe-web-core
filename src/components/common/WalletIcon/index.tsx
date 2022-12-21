@@ -9,6 +9,8 @@ import tallyhoIcon from '@web3-onboard/tallyho/dist/icon'
 import fortmaticIcon from '@web3-onboard/fortmatic/dist/icon'
 import portisIcon from '@web3-onboard/portis/dist/icon'
 import torusIcon from '@web3-onboard/torus/dist/icon'
+// @ts-ignore
+import magicIcon from '@web3-onboard/magic/dist/icon-87babf0a'
 
 import { WALLET_KEYS } from '@/hooks/wallets/wallets'
 import pairingIcon from '@/services/pairing/icon'
@@ -37,6 +39,7 @@ const WALLET_ICONS: Props = {
   [WALLET_KEYS.FORTMATIC]: fortmaticIcon,
   [WALLET_KEYS.PORTIS]: portisIcon,
   [WALLET_KEYS.TORUS]: torusIcon,
+  [WALLET_KEYS.MAGIC]: magicIcon,
 }
 
 // Labels may differ from ALL_WALLET_KEYS

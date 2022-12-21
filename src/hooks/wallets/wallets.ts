@@ -5,6 +5,7 @@ import {
   WC_BRIDGE,
   FORTMATIC_KEY,
   PORTIS_KEY,
+  MAGIC_API_KEY,
 } from '@/config/constants'
 import { type RecommendedInjectedWallets, type WalletInit } from '@web3-onboard/common/dist/types.d'
 import type { ChainInfo } from '@safe-global/safe-gateway-typescript-sdk'
@@ -19,6 +20,7 @@ import tallyhoModule from '@web3-onboard/tallyho'
 import fortmaticModule from '@web3-onboard/fortmatic'
 import portisModule from '@web3-onboard/portis'
 import torusModule from '@web3-onboard/torus'
+import magicModule from '@web3-onboard/magic'
 
 import pairingModule, { PAIRING_MODULE_LABEL } from '@/services/pairing/module'
 import e2eWalletModule from '@/tests/e2e-wallet'
@@ -38,6 +40,7 @@ export const enum WALLET_KEYS {
   FORTMATIC = 'FORTMATIC',
   PORTIS = 'PORTIS',
   TORUS = 'TORUS',
+  MAGIC = 'MAGIC',
 }
 
 export const CGW_NAMES: { [key in WALLET_KEYS]: string | undefined } = {
@@ -52,6 +55,7 @@ export const CGW_NAMES: { [key in WALLET_KEYS]: string | undefined } = {
   [WALLET_KEYS.FORTMATIC]: 'fortmatic',
   [WALLET_KEYS.PORTIS]: 'portis',
   [WALLET_KEYS.TORUS]: 'torus',
+  [WALLET_KEYS.MAGIC]: 'magic',
 }
 
 const WALLET_MODULES: { [key in WALLET_KEYS]: () => WalletInit } = {
@@ -67,6 +71,7 @@ const WALLET_MODULES: { [key in WALLET_KEYS]: () => WalletInit } = {
   [WALLET_KEYS.FORTMATIC]: () => fortmaticModule({ apiKey: FORTMATIC_KEY }),
   [WALLET_KEYS.PORTIS]: () => portisModule({ apiKey: PORTIS_KEY }),
   [WALLET_KEYS.TORUS]: torusModule,
+  [WALLET_KEYS.MAGIC]: () => magicModule({ apiKey: MAGIC_API_KEY }),
 }
 
 export const getAllWallets = (): WalletInit[] => {
