@@ -7,6 +7,7 @@ const useConnectWallet = (onConnect?: (wallet?: ConnectedWallet) => void) => {
   const onboard = useOnboard()
 
   const handleConnect = async () => {
+    onConnect?.()
     if (!onboard) return
 
     // We `trackEvent` instead of using `<Track>` as it impedes styling
@@ -15,8 +16,6 @@ const useConnectWallet = (onConnect?: (wallet?: ConnectedWallet) => void) => {
     const result = await connectWallet(onboard)
 
     if (result instanceof CodedException) return
-
-    onConnect?.(result)
   }
 
   return handleConnect
